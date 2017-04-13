@@ -1,0 +1,8 @@
+.projectCard-container {
+    border: 2px solid red;
+    background-color: salmon;
+    text-align: left;
+    width: 800px;
+    margin: auto;
+    padding: 50px;
+}
