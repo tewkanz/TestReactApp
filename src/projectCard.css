@@ -2,7 +2,51 @@
     border: 2px solid red;
     background-color: salmon;
     text-align: left;
-    width: 800px;
-    margin: auto;
+    margin: 25px 100px;
     padding: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-width: 600px;
+    max-width: 1024px;
+}
+
+@media (max-width: 600px){
+    .projectCard-container{
+        flex-wrap: wrap;
+    }
+}
+
+.projectCard-container * {
+    margin: 0;
+    padding: 0;
+}
+
+.projectCard-imageContainer{
+    background: white;
+    height: 300px;
+    width: 300px;
+}
+
+.projectCard-contentContainer{
+    background: deepskyblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.projectCard-addlInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.projectCard-addlInfo li{
+    display: inline;
+    margin: 5px 2px;
+    list-style-type: circle;
+}
+
+.projectCard-description{
+    
 }

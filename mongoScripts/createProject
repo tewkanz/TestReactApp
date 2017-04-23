@@ -1,0 +1,30 @@
+db.createCollection("project", {
+	validator: {
+		$and: [
+			{ title: { $exists: true } },
+			{ user_id: { $exists: true } },
+			{ $or: [
+				{ dueDate: { $exists: false } },
+				{ dueDate: { $type: "date" } }
+			]},
+			{ $or: [
+				{ timeSpent: { $exists: false } },
+				{ timeSpent: { $type: "long" } }
+			]},
+			{ $or: [
+				{ timeEstimate: { $exists: false } },
+				{ timeEstimate: { $type: "long" } }
+			]},
+			{ $or: [
+				{ expReward: { $exists: false } },
+				{ expReward: { type: "int"} },
+				{ expReward: { $gte: NumberInt(0) } },
+			]},
+			{ $or: [
+				{ goldReward: { $exists: false } },
+				{ goldReward: { type: "int"} },
+				{ goldReward: { $gte: NumberInt(0) } },
+			]}
+		]
+	}
+})
